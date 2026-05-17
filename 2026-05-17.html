@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🦐 大虾日报 - 2026-05-17</title>
+    <style>
+        :root {
+            --bg: #0f172a;
+            --card: #1e293b;
+            --border: #334155;
+            --text: #e2e8f0;
+            --muted: #94a3b8;
+            --accent: #38bdf8;
+            --red: #f87171;
+            --green: #4ade80;
+            --yellow: #fbbf24;
+            --orange: #fb923c;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            padding: 16px;
+        }
+        .container { max-width: 800px; margin: 0 auto; }
+        .header {
+            text-align: center;
+            padding: 24px 0 16px;
+            border-bottom: 1px solid var(--border);
+            margin-bottom: 24px;
+        }
+        .header h1 { font-size: 28px; margin-bottom: 4px; }
+        .header .date { color: var(--muted); font-size: 14px; }
+        .section {
+            background: var(--card);
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 16px;
+            border-left: 4px solid var(--accent);
+        }
+        .section.political { border-left-color: var(--red); }
+        .section.tech { border-left-color: var(--green); }
+        .section.market { border-left-color: var(--yellow); }
+        .section.crypto { border-left-color: var(--orange); }
+        .section h2 {
+            font-size: 18px;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .item {
+            padding: 12px 0;
+            border-bottom: 1px solid var(--border);
+        }
+        .item:last-child { border-bottom: none; }
+        .item-title {
+            font-weight: 600;
+            font-size: 15px;
+            margin-bottom: 4px;
+        }
+        .item-desc {
+            color: var(--muted);
+            font-size: 14px;
+            margin-bottom: 6px;
+        }
+        .item a {
+            color: var(--accent);
+            text-decoration: none;
+            font-size: 13px;
+            word-break: break-all;
+        }
+        .item a:hover { text-decoration: underline; }
+        .tag {
+            display: inline-block;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 11px;
+            font-weight: 600;
+            margin-right: 6px;
+        }
+        .tag.hot { background: rgba(248,113,113,0.2); color: var(--red); }
+        .tag.new { background: rgba(74,222,128,0.2); color: var(--green); }
+        .tag.info { background: rgba(56,189,248,0.2); color: var(--accent); }
+        .stock-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+            gap: 8px;
+            margin-top: 12px;
+        }
+        .stock-card {
+            background: rgba(0,0,0,0.2);
+            border-radius: 8px;
+            padding: 12px;
+            text-align: center;
+        }
+        .stock-symbol { font-size: 12px; color: var(--muted); }
+        .stock-price { font-size: 20px; font-weight: 700; margin: 4px 0; }
+        .stock-note { font-size: 11px; color: var(--muted); }
+        .up { color: var(--green); }
+        .down { color: var(--red); }
+        .footer {
+            text-align: center;
+            padding: 24px 0;
+            color: var(--muted);
+            font-size: 13px;
+            border-top: 1px solid var(--border);
+            margin-top: 24px;
+        }
+        .highlight {
+            background: rgba(248,113,113,0.1);
+            border-left: 3px solid var(--red);
+            padding: 8px 12px;
+            border-radius: 0 8px 8px 0;
+            margin: 8px 0;
+            font-size: 14px;
+        }
+        @media (max-width: 480px) {
+            body { padding: 12px; }
+            .header h1 { font-size: 22px; }
+            .section { padding: 16px; }
+            .stock-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🦐 大虾日报</h1>
+            <div class="date">2026-05-17 · 周日</div>
+        </div>
+
+        <div class="section market">
+            <h2>📊 市场快照</h2>
+            <div class="stock-grid">
+                <div class="stock-card">
+                    <div class="stock-symbol">S&P 500</div>
+                    <div class="stock-price">7408.5</div>
+                    <div class="stock-note">心理关口附近</div>
+                </div>
+                <div class="stock-card">
+                    <div class="stock-symbol">VIX</div>
+                    <div class="stock-price">18.43</div>
+                    <div class="stock-note">恐慌指数低位</div>
+                </div>
+                <div class="stock-card">
+                    <div class="stock-symbol">TSLA</div>
+                    <div class="stock-price">$422.24</div>
+                    <div class="stock-note">持仓</div>
+                </div>
+                <div class="stock-card">
+                    <div class="stock-symbol">NVDA</div>
+                    <div class="stock-price">$225.32</div>
+                    <div class="stock-note">预测 $253</div>
+                </div>
+                <div class="stock-card">
+                    <div class="stock-symbol">AAPL</div>
+                    <div class="stock-price">$300.23</div>
+                    <div class="stock-note">持仓</div>
+                </div>
+                <div class="stock-card">
+                    <div class="stock-symbol">MSFT</div>
+                    <div class="stock-price">$421.92</div>
+                    <div class="stock-note">持仓</div>
+                </div>
+                <div class="stock-card">
+                    <div class="stock-symbol">RKLB</div>
+                    <div class="stock-price">$124.77</div>
+                    <div class="stock-note">持仓</div>
+                </div>
+                <div class="stock-card">
+                    <div class="stock-symbol">PL</div>
+                    <div class="stock-price">$41.62</div>
+                    <div class="stock-note">持仓</div>
+                </div>
+                <div class="stock-card">
+                    <div class="stock-symbol">BTC</div>
+                    <div class="stock-price">$78,104</div>
+                    <div class="stock-note">盘整中</div>
+                </div>
+                <div class="stock-card">
+                    <div class="stock-symbol">WTI 原油</div>
+                    <div class="stock-price up">$101.02</div>
+                    <div class="stock-note">⚠️ 破百</div>
+                </div>
+                <div class="stock-card">
+                    <div class="stock-symbol">Brent</div>
+                    <div class="stock-price up">$109.26</div>
+                    <div class="stock-note">⚠️ 地缘溢价</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section political">
+            <h2>🌍 国际政治</h2>
+            <div class="item">
+                <div class="item-title">
+                    <span class="tag hot">热点</span>
+                    中东局势持续升温
+                </div>
+                <div class="item-desc">
+                    • 真主党光纤无人机战术进化（BBC Verify 分析数十段视频）<br>
+                    • 哈马斯加沙最高领导人在以色列空袭中身亡<br>
+                    • 伊朗代理人网络可能外溢到中东以外地区<br>
+                    • IS 高级领导人在美尼联合行动中被击毙
+                </div>
+                <a href="https://www.bbc.com/news/articles/c1j2zwe9g5no">BBC: 真主党无人机战术 →</a><br>
+                <a href="https://www.nytimes.com/2026/05/16/world/middleeast/iran-proxy-groups-us.html">NYT: 伊朗代理人风险 →</a>
+            </div>
+            <div class="item">
+                <div class="item-title">
+                    <span class="tag hot">热点</span>
+                    台海局势紧张
+                </div>
+                <div class="item-desc">
+                    • Trump 访华峰会后警告台湾不要正式宣布独立<br>
+                    • 将对台军售作为对华"谈判筹码"（NYT 称 risky）<br>
+                    • 台湾回应：坚持独立立场
+                </div>
+                <a href="https://www.nytimes.com/2026/05/16/world/asia/trump-taiwan-arms-bargaining-chip-china.html">NYT: Trump 军售筹码 →</a><br>
+                <a href="https://www.bbc.com/news/articles/cx2132w81jqo">BBC: 台湾回应 →</a>
+            </div>
+            <div class="item">
+                <div class="item-title">
+                    <span class="tag info">关注</span>
+                    英国/欧洲
+                </div>
+                <div class="item-desc">
+                    • 伦敦大规模对立抗议：极右翼 vs 亲巴勒斯坦，警方部署数千警力<br>
+                    • 英国借贷成本上升、英镑下跌（市场担忧政府增加借贷）
+                </div>
+            </div>
+        </div>
+
+        <div class="section tech">
+            <h2>🤖 科技/AI</h2>
+            <div class="item">
+                <div class="item-title">Musk-Altman 审判结案</div>
+                <div class="item-desc">陪审团 deliberation 中，几周审判暴露科技界阴暗面</div>
+                <a href="https://www.bbc.com/news/articles/cg7pj8p5mv4o">BBC: 审判总结 →</a>
+            </div>
+            <div class="item">
+                <div class="item-title">Raspberry Pi 老板警告</div>
+                <div class="item-desc">AI 可能让人远离科技工作，反而伤害经济</div>
+                <a href="https://www.bbc.com/news/articles/clypr8p2lewo">BBC: AI 就业警告 →</a>
+            </div>
+            <div class="item">
+                <div class="item-title">X 承诺加快处理仇恨内容</div>
+                <div class="item-desc">英国近期针对犹太社区的犯罪事件后，Ofcom 要求 X 采取行动</div>
+                <a href="https://www.bbc.com/news/articles/clyp9652v18o">BBC: X 平台整改 →</a>
+            </div>
+        </div>
+
+        <div class="section market">
+            <h2>🔑 关键提醒</h2>
+            <div class="highlight">
+                ⚠️ <strong>原油破百</strong>：WTI $101 / Brent $109，中东溢价明显。传导链：中东→能源→通胀→Fed 不敢降息
+            </div>
+            <div class="highlight">
+                ⏰ <strong>6 月 12 日 Fed 会议</strong>：倒计时 26 天，市场预期按兵不动
+            </div>
+        </div>
+
+        <div class="footer">
+            🦐 大虾日报 · 2026-05-17<br>
+            <span style="font-size:11px; margin-top:8px; display:block;">
+                数据来源：BBC / NYT / Yahoo Finance<br>
+                生成时间：北京时间 09:00
+            </span>
+        </div>
+    </div>
+</body>
+</html>
