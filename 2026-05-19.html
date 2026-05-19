@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🦐 大虾日报 - 2026-05-19</title>
+    <style>
+        :root {
+            --bg: #0f172a;
+            --card: #1e293b;
+            --border: #334155;
+            --text: #e2e8f0;
+            --muted: #94a3b8;
+            --accent: #38bdf8;
+            --red: #f87171;
+            --green: #4ade80;
+            --yellow: #fbbf24;
+            --orange: #fb923c;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            padding: 16px;
+        }
+        .container { max-width: 800px; margin: 0 auto; }
+        .header {
+            text-align: center;
+            padding: 24px 0 16px;
+            border-bottom: 1px solid var(--border);
+            margin-bottom: 24px;
+        }
+        .header h1 { font-size: 28px; margin-bottom: 4px; }
+        .header .date { color: var(--muted); font-size: 14px; }
+        .section {
+            background: var(--card);
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 16px;
+            border-left: 4px solid var(--accent);
+        }
+        .section.political { border-left-color: var(--red); }
+        .section.tech { border-left-color: var(--green); }
+        .section.market { border-left-color: var(--yellow); }
+        .section.crypto { border-left-color: var(--orange); }
+        .section h2 {
+            font-size: 18px;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .item {
+            padding: 12px 0;
+            border-bottom: 1px solid var(--border);
+        }
+        .item:last-child { border-bottom: none; }
+        .item-title {
+            font-weight: 600;
+            font-size: 15px;
+            margin-bottom: 4px;
+        }
+        .item-desc {
+            color: var(--muted);
+            font-size: 14px;
+            margin-bottom: 6px;
+        }
+        .item a {
+            color: var(--accent);
+            text-decoration: none;
+            font-size: 13px;
+            word-break: break-all;
+        }
+        .item a:hover { text-decoration: underline; }
+        .tag {
+            display: inline-block;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 11px;
+            font-weight: 600;
+            margin-right: 6px;
+        }
+        .tag.hot { background: rgba(248,113,113,0.2); color: var(--red); }
+        .tag.new { background: rgba(74,222,128,0.2); color: var(--green); }
+        .tag.info { background: rgba(56,189,248,0.2); color: var(--accent); }
+        .tag.warn { background: rgba(251,191,36,0.2); color: var(--yellow); }
+        .stock-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+            gap: 8px;
+            margin-top: 12px;
+        }
+        .stock-card {
+            background: rgba(0,0,0,0.2);
+            border-radius: 8px;
+            padding: 12px;
+            text-align: center;
+        }
+        .stock-symbol { font-size: 12px; color: var(--muted); }
+        .stock-price { font-size: 20px; font-weight: 700; margin: 4px 0; }
+        .stock-note { font-size: 11px; color: var(--muted); }
+        .up { color: var(--green); }
+        .down { color: var(--red); }
+        .footer {
+            text-align: center;
+            padding: 24px 0;
+            color: var(--muted);
+            font-size: 13px;
+            border-top: 1px solid var(--border);
+            margin-top: 24px;
+        }
+        .highlight {
+            background: rgba(248,113,113,0.1);
+            border-left: 3px solid var(--red);
+            padding: 8px 12px;
+            border-radius: 0 8px 8px 0;
+            margin: 8px 0;
+            font-size: 14px;
+        }
+        .insight-card {
+            background: rgba(0,0,0,0.15);
+            border-radius: 8px;
+            padding: 12px;
+            margin-bottom: 8px;
+        }
+        .insight-card h3 {
+            font-size: 14px;
+            margin-bottom: 6px;
+        }
+        .insight-card p {
+            color: var(--muted);
+            font-size: 13px;
+        }
+        .risk-high { border-left: 3px solid var(--red); }
+        .risk-mid { border-left: 3px solid var(--yellow); }
+        .risk-low { border-left: 3px solid var(--green); }
+        .nav-links {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            margin-bottom: 16px;
+            flex-wrap: wrap;
+        }
+        .nav-links a {
+            color: var(--accent);
+            text-decoration: none;
+            font-size: 13px;
+            padding: 4px 12px;
+            border: 1px solid var(--border);
+            border-radius: 16px;
+        }
+        .nav-links a:hover { background: rgba(56,189,248,0.1); }
+        @media (max-width: 480px) {
+            body { padding: 12px; }
+            .header h1 { font-size: 22px; }
+            .section { padding: 16px; }
+            .stock-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🦐 大虾日报</h1>
+            <div class="date">2026-05-19 · 周二</div>
+        </div>
+
+        <div class="nav-links">
+            <a href="2026-05-18.html">← 5/18</a>
+            <a href="index.html">📋 目录</a>
+        </div>
+
+        <div class="section market">
+            <h2>📊 执行摘要</h2>
+            <div class="item-desc">
+                <strong>今日关键词：</strong>美伊和平进程推进 + S&P 500 微跌 + TSLA 中国 FSD 无突破
+            </div>
+            <div class="item-desc" style="margin-top:8px">
+                市场概况：S&P 500 收于 7349 点，下跌 0.73%。市场 breadth 继续回落，不到 50% 的 S&P 500 股票交易在 200 日均线上方。技术支撑位在 7030 附近。
+            </div>
+            <div class="item-desc" style="margin-top:8px">
+                <strong>地缘焦点：</strong>美伊和平进程推进——Trump 取消原定对伊朗军事打击，应海湾盟友请求进行"serious negotiations"。伊朗总统强调对话不意味投降。
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>💡 核心洞察</h2>
+            <div class="insight-card risk-low">
+                <h3>🟢 美伊和平进程推进</h3>
+                <p>
+                    • <strong>Trump 取消原定对伊朗军事打击</strong><br>
+                    • 应海湾盟友请求，"serious negotiations" 进行中<br>
+                    • 和平协议"非常接近"达成<br>
+                    • <strong>传导链：</strong>和谈进展 → 原油可能回落 → 通胀预期下降 → 美联储压力减轻 → 股市利好
+                </p>
+            </div>
+            <div class="insight-card risk-mid">
+                <h3>🟡 市场 breadth 回落</h3>
+                <p>
+                    • 不到 50% 的 S&P 500 股票交易在 200 日均线上方<br>
+                    • 技术支撑位在 7030 附近<br>
+                    • 50 日均线在 7030 下方约 100 点<br>
+                    • <strong>信号：</strong>市场 rally 过快，技术面需要消化
+                </p>
+            </div>
+            <div class="insight-card risk-high">
+                <h3>🔴 TSLA 中国 FSD 无突破</h3>
+                <p>
+                    • <strong>Tesla 股票收于 $422.24，下跌 4.75%</strong><br>
+                    • Trump-Xi 北京峰会后，FSD 自动驾驶软件无中国突破<br>
+                    • Goldman Sachs 下调目标价至 $285（从 $295）<br>
+                    • <strong>影响：</strong>短期承压，需观察 FSD 中国进展
+                </p>
+            </div>
+        </div>
+
+        <div class="section market">
+            <h2>📈 市场快照</h2>
+            <div class="stock-grid">
+                <div class="stock-card">
+                    <div class="stock-symbol">S&P 500</div>
+                    <div class="stock-price down">7349</div>
+                    <div class="stock-note">-0.73%</div>
+                </div>
+                <div class="stock-card">
+                    <div class="stock-symbol">原油 WTI</div>
+                    <div class="stock-price">$95.42</div>
+                    <div class="stock-note">和谈可能回落</div>
+                </div>
+                <div class="stock-card">
+                    <div class="stock-symbol">黄金</div>
+                    <div class="stock-price">$4561.9</div>
+                    <div class="stock-note">避险资产</div>
+                </div>
+                <div class="stock-card">
+                    <div class="stock-symbol">BTC</div>
+                    <div class="stock-price">$76k-$80k</div>
+                    <div class="stock-note">盘整中</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>🏢 持仓公司动态</h2>
+            <div class="stock-grid">
+                <div class="stock-card">
+                    <div class="stock-symbol">TSLA</div>
+                    <div class="stock-price down">$422.24</div>
+                    <div class="stock-note">🔴 负面</div>
+                </div>
+                <div class="stock-card">
+                    <div class="stock-symbol">NVDA</div>
+                    <div class="stock-price up">$1T</div>
+                    <div class="stock-note">✅ 正面</div>
+                </div>
+                <div class="stock-card">
+                    <div class="stock-symbol">AAPL</div>
+                    <div class="stock-price">—</div>
+                    <div class="stock-note">中性</div>
+                </div>
+                <div class="stock-card">
+                    <div class="stock-symbol">MSFT</div>
+                    <div class="stock-price">—</div>
+                    <div class="stock-note">中性</div>
+                </div>
+                <div class="stock-card">
+                    <div class="stock-symbol">RKLB</div>
+                    <div class="stock-price">—</div>
+                    <div class="stock-note">中性</div>
+                </div>
+                <div class="stock-card">
+                    <div class="stock-symbol">PL</div>
+                    <div class="stock-price">—</div>
+                    <div class="stock-note">中性</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section political">
+            <h2>🌍 地缘政治</h2>
+            <div class="item">
+                <div class="item-title">
+                    <span class="tag warn">🟢</span>
+                    中东/伊朗
+                </div>
+                <div class="item-desc">
+                    • <strong>Trump 取消原定对伊朗军事打击</strong><br>
+                    • 应海湾盟友请求，"serious negotiations" 进行中<br>
+                    • 和平协议"非常接近"达成<br>
+                    • 伊朗总统：对话不意味投降
+                </div>
+            </div>
+            <div class="item">
+                <div class="item-title">
+                    <span class="tag hot">🔴</span>
+                    俄乌
+                </div>
+                <div class="item-desc">
+                    • 乌克兰对莫斯科发动史上最大无人机袭击（500+ 架）<br>
+                    • 3-4 人死亡，炼油厂受损
+                </div>
+            </div>
+            <div class="item">
+                <div class="item-title">
+                    <span class="tag warn">🟡</span>
+                    中美
+                </div>
+                <div class="item-desc">
+                    • 中国同意每年购买至少 $170 亿美国农产品<br>
+                    • Trump 访华后发布"历史性交易"声明
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>📌 行动建议</h2>
+            <div class="highlight">
+                🟢 <strong>关注美伊和谈进展</strong> — 和平协议若达成，原油可能大幅回落
+            </div>
+            <div class="highlight">
+                🟡 <strong>观察 S&P 500 技术面</strong> — 7030 是关键支撑位
+            </div>
+            <div class="highlight">
+                🔴 <strong>TSLA 中国 FSD 进展</strong> — 决定短期走势
+            </div>
+            <div class="highlight">
+                ✅ <strong>NVDA 正面信号</strong> — $1T 收入预期支撑估值
+            </div>
+        </div>
+
+        <div class="footer">
+            🦐 大虾日报 · 2026-05-19 22:00<br>
+            <span style="font-size:11px; margin-top:8px; display:block;">
+                数据来源：Google News RSS + DuckDuckGo + 财经新闻<br>
+                浏览器状态：未连接（使用备用方案）
+            </span>
+        </div>
+    </div>
+</body>
+</html>
