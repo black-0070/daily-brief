@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🦐 大虾日报 - 2026-05-17</title>
+    <style>
+        :root {
+            --bg: #0f172a;
+            --card: #1e293b;
+            --border: #334155;
+            --text: #e2e8f0;
+            --muted: #94a3b8;
+            --accent: #38bdf8;
+            --red: #f87171;
+            --green: #4ade80;
+            --yellow: #fbbf24;
+            --orange: #fb923c;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            padding: 16px;
+        }
+        .container { max-width: 800px; margin: 0 auto; }
+        .header {
+            text-align: center;
+            padding: 24px 0 16px;
+            border-bottom: 1px solid var(--border);
+            margin-bottom: 24px;
+        }
+        .header h1 { font-size: 28px; margin-bottom: 4px; }
+        .header .date { color: var(--muted); font-size: 14px; }
+        .section {
+            background: var(--card);
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 16px;
+            border-left: 4px solid var(--accent);
+        }
+        .section.political { border-left-color: var(--red); }
+        .section.tech { border-left-color: var(--green); }
+        .section.market { border-left-color: var(--yellow); }
+        .section.crypto { border-left-color: var(--orange); }
+        .section h2 {
+            font-size: 18px;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .item {
+            padding: 12px 0;
+            border-bottom: 1px solid var(--border);
+        }
+        .item:last-child { border-bottom: none; }
+        .item-title {
+            font-weight: 600;
+            font-size: 15px;
+            margin-bottom: 4px;
+        }
+        .item-desc {
+            color: var(--muted);
+            font-size: 14px;
+            margin-bottom: 6px;
+        }
+        .item a {
+            color: var(--accent);
+            text-decoration: none;
+            font-size: 13px;
+            word-break: break-all;
+        }
+        .item a:hover { text-decoration: underline; }
+        .tag {
+            display: inline-block;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 11px;
+            font-weight: 600;
+            margin-right: 6px;
+        }
+        .tag.hot { background: rgba(248,113,113,0.2); color: var(--red); }
+        .tag.new { background: rgba(74,222,128,0.2); color: var(--green); }
+        .tag.info { background: rgba(56,189,248,0.2); color: var(--accent); }
+        .stock-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+            gap: 8px;
+            margin-top: 12px;
+        }
+        .stock-card {
+            background: rgba(0,0,0,0.2);
+            border-radius: 8px;
+            padding: 12px;
+            text-align: center;
+        }
+        .stock-symbol { font-size: 12px; color: var(--muted); }
+        .stock-price { font-size: 20px; font-weight: 700; margin: 4px 0; }
+        .stock-note { font-size: 11px; color: var(--muted); }
+        .up { color: var(--green); }
+        .down { color: var(--red); }
+        .footer {
+            text-align: center;
+            padding: 24px 0;
+            color: var(--muted);
+            font-size: 13px;
+            border-top: 1px solid var(--border);
+            margin-top: 24px;
+        }
+        .highlight {
+            background: rgba(248,113,113,0.1);
+            border-left: 3px solid var(--red);
+            padding: 8px 12px;
+            border-radius: 0 8px 8px 0;
+            margin: 8px 0;
+            font-size: 14px;
+        }
+        @media (max-width: 480px) {
+            body { padding: 12px; }
+            .header h1 { font-size: 22px; }
+            .section { padding: 16px; }
+            .stock-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🦐 大虾日报</h1>
+            <div class="date">2026-05-17 · 周日</div>
+        </div>
+
+        <div class="section market">
+            <h2>📊 市场快照</h2>
+            <div class="stock-grid">
+                <div class="stock-card">
+                    <div class="stock-symbol">S&P 500</div>
+                    <div class="stock-price">7408.5</div>
+                    <div class="stock-note">心理关口附近</div>
+                </div>
+                <div class="stock-card">
+                    <div class="stock-symbol">VIX</div>
+                    <div class="stock-price">18.43</div>
+                    <div class="stock-note">恐慌指数低位</div>
+                </div>
+                <div class="stock-card">
+                    <div class="stock-symbol">WTI 原油</div>
+                    <div class="stock-price up">$101.02</div>
+                    <div class="stock-note">⚠️ 破百</div>
+                </div>
+                <div class="stock-card">
+                    <div class="stock-symbol">Brent</div>
+                    <div class="stock-price up">$109.26</div>
+                    <div class="stock-note">⚠️ 地缘溢价</div>
+                </div>
+                <div class="stock-card">
+                    <div class="stock-symbol">黄金</div>
+                    <div class="stock-price">$4561.9</div>
+                    <div class="stock-note">避险资产</div>
+                </div>
+                <div class="stock-card">
+                    <div class="stock-symbol">BTC</div>
+                    <div class="stock-price">$78,042</div>
+                    <div class="stock-note">盘整中</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>📈 持仓表现</h2>
+            <div class="stock-grid">
+                <div class="stock-card">
+                    <div class="stock-symbol">TSLA</div>
+                    <div class="stock-price">$422.24</div>
+                    <div class="stock-note">持仓</div>
+                </div>
+                <div class="stock-card">
+                    <div class="stock-symbol">NVDA</div>
+                    <div class="stock-price">$225.32</div>
+                    <div class="stock-note">预测 $253</div>
+                </div>
+                <div class="stock-card">
+                    <div class="stock-symbol">AAPL</div>
+                    <div class="stock-price">$300.23</div>
+                    <div class="stock-note">持仓</div>
+                </div>
+                <div class="stock-card">
+                    <div class="stock-symbol">MSFT</div>
+                    <div class="stock-price">$421.92</div>
+                    <div class="stock-note">持仓</div>
+                </div>
+                <div class="stock-card">
+                    <div class="stock-symbol">RKLB</div>
+                    <div class="stock-price">$124.77</div>
+                    <div class="stock-note">持仓</div>
+                </div>
+                <div class="stock-card">
+                    <div class="stock-symbol">PL</div>
+                    <div class="stock-price">$41.62</div>
+                    <div class="stock-note">持仓</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section political">
+            <h2>🌍 国际政治</h2>
+            <div class="item">
+                <div class="item-title">
+                    <span class="tag hot">热点</span>
+                    乌克兰对莫斯科发动史上最大无人机袭击
+                </div>
+                <div class="item-desc">
+                    • 500+ 架无人机袭击莫斯科炼油厂，3-4 人死亡<br>
+                    • 来源：Bloomberg / BBC / Reuters / CNN / France24<br>
+                    • 影响：俄乌冲突升级，可能进一步推高能源价格
+                </div>
+                <a href="https://www.bbc.com/news/articles/c1j2zwe9g5no">BBC: 乌克兰无人机袭击 →</a>
+            </div>
+            <div class="item">
+                <div class="item-title">
+                    <span class="tag hot">热点</span>
+                    WHO 宣布 Ebola 为全球卫生紧急事件
+                </div>
+                <div class="item-desc">
+                    • Bundibugyo 毒株，致死率 50%，无疫苗、无特效药<br>
+                    • 刚果（金）+ 乌干达，80-88 人死亡，246 例确诊<br>
+                    • 美国发布旅行警告，肯尼亚高度戒备<br>
+                    • 影响：短期避险情绪，对美股整体影响有限
+                </div>
+                <a href="https://www.bbc.com/news/articles/c2l2p0wwzzdo">BBC: WHO 宣布 Ebola 紧急事件 →</a><br>
+                <a href="https://www.theguardian.com/world/article/2026/may/17/who-declares-ebola-outbreak-congo-uganda-emergency-international-concern">Guardian: Ebola 紧急事件 →</a>
+            </div>
+            <div class="item">
+                <div class="item-title">
+                    <span class="tag hot">热点</span>
+                    Trump 在初选中击败 Cassidy
+                </div>
+                <div class="item-desc">
+                    • Louisiana 参议员 Bill Cassidy 在初选中落败<br>
+                    • Trump 成功清除党内异见者<br>
+                    • 来源：NYT / The Guardian / Al Jazeera / Fox News<br>
+                    • 影响：Trump 对 GOP 控制力加强，2026 中期选举信号
+                </div>
+                <a href="https://news.google.com/rss/articles/CBMihwFBVV95cUxOeXJ3ZkVVWEtxZXNBVGZNY013TVBaY283N21aNnA3VnlOQ0JfTnQ3aXhQaVpxRVhqTFJCaHI2Y3BQWFFiYlFTcHlIMGdNaTFZcEl4NEh4ZEl2cTVkRFhxcHU3TVVzZEFGNTI2UktucWZMQ3ZkYXRZT0pyTi1HUGJMZEJwb3d1Z1E">NYT: Cassidy 初选落败 →</a>
+            </div>
+            <div class="item">
+                <div class="item-title">
+                    <span class="tag info">关注</span>
+                    委内瑞拉将 Maduro 亲信 Alex Saab 引渡美国
+                </div>
+                <div class="item-desc">
+                    • Alex Saab 是 Maduro 的"钱袋子"，被引渡到美国面临刑事起诉<br>
+                    • 来源：DW / AP / Reuters / NYT / Fox News<br>
+                    • 影响：地缘政治信号，美国对拉美施压
+                </div>
+                <a href="https://news.google.com/rss/articles/CBMihAFBVV95cUxOcmhVNEJ1NS00OEVMeWpvMGx5eUxPZngyd0dEUERXZ0VEbWtkSEt4eHY3aVNJX1F6S3VIcmZqZkRNMnNmOWJ4X2t6dzllVUVPbzE3bkxVVHM4TEg5X2Q3SkxOM3QxdFFzcTU4b29Yank0aUViYVktUzR6Ry0tS0hqVmtRUHLSAYQBQVVfeXFMUHZwSGV5ZjZoZDJvN0k4bnJFZlR6WWxNT2Z4ZWlzWjJIWWxSOG81Zk5MUU93RnpZTVVmZ0o0clMtWXczbVdRdUJRa1cxT2ROclJVZFlxQ3otTHp2V0dlR2NfQmplMnJUc1VpcG54THNwcEx3NjJNQzJpYWY3LWNITlVPa1RV">DW: Alex Saab 引渡 →</a>
+            </div>
+            <div class="item">
+                <div class="item-title">
+                    <span class="tag info">关注</span>
+                    Trump 的 $400M 宴会厅资金被参议院否决
+                </div>
+                <div class="item-desc">
+                    • 参议院议会专家否决预算案中的宴会厅资金<br>
+                    • 来源：NBC / The Guardian / Al Jazeera / NYT<br>
+                    • 影响：政治八卦，但反映 GOP 内部矛盾
+                </div>
+                <a href="https://news.google.com/rss/articles/CBMixAFBVV95cUxNRFZwYkJkS0tnS2pIR3FHVjY3LXhuWlV4VVhXbW1nOEJhel9nRFAyNkdfakVMemdOdVVzUVBUTV9FeERZZEFnbFVLTXljckxTZldaMUhOTXdOanlVWk1heEM1RUFwRURET250VWJNLWRINERUaVpET2p0bXhwa1I1VVFjNjRLNjRweUlDNVJaTGlwM1FFSGVzSXc0ajA2Zk92dmNuVkdBTno3WFJGUmg5MWM1SXJXODJZazBTdEw4SFQ0SFRv">NBC: 宴会厅资金否决 →</a>
+            </div>
+        </div>
+
+        <div class="section tech">
+            <h2>🤖 科技/AI</h2>
+            <div class="item">
+                <div class="item-title">iPhone 18 Pro 新特性曝光</div>
+                <div class="item-desc">
+                    • 最重 iPhone，RAM 危机影响定价<br>
+                    • 来源：Gizchina / MacRumors / 9to5Mac<br>
+                    • 影响：AAPL 持仓相关
+                </div>
+                <a href="https://news.google.com/rss/articles/CBMilwFBVV95cUxPRTZSbUloZC1qcXAxWWZkb2I0SnN4aDJXV0hVeTY5ejBTNUlteF9IU0xfNWRmb3JqU3NmM0FXZ29sd3JuT0gxVUozaXJubGVaSlh1WEFocXZrdkZBQkdCOTVhZmw4WFdnb2lWSldjUC0yQkFfWnJOd1pxa0w1ZWh0dTJ4THJBWVo1U3FXOE0wLUZYU1BIcV84">Gizchina: iPhone 18 Pro →</a>
+            </div>
+            <div class="item">
+                <div class="item-title">SpaceX Dragon 货运飞船发射</div>
+                <div class="item-desc">
+                    • CRS-34 货运任务，6500 磅科学物资运往 ISS<br>
+                    • 来源：CBS / NASA / SpaceNews<br>
+                    • 影响：RKLB 持仓相关（航天板块）
+                </div>
+                <a href="https://news.google.com/rss/articles/CBMikwFBVV95cUxPQzh4RUp2MDBtd0pUOHZZTm9ZNnh5aVJUZko5Q2xPSlJTS2d3cHR0X1dXblRpbS1zazdDd1Q5VUZFMXhSSFpJY2pfaExyWGVleEFweE5BYVFzRDc3dmJYZW9kdVFrVEM1ZWROeHphSDJtSjlwS1RnVlVEMjlSOHFjOXRMckk1dk5rYUZXMWxpakQwTEnSAZgBQVVfeXFMUGVfUEd0cTIxY3NXRG9lTFRuQVpNX0pLY1VCZkptUkxuM3BIaWVma3BPa2RfNlZqR0todTNCa3ZTdkhmTmhNSUUxSTVyUmJDODVyaU9UeU4xRnktU3NHWC1jOWZYU0M4c1RQWi1wMmpiVWZaNjJRLWV5eXBUMnVPSEZLNENIWUJsVlJFYldRNTZORXRMMVN5NUI">CBS: SpaceX Dragon →</a>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>🔑 关键提醒</h2>
+            <div class="highlight">
+                ⚠️ <strong>原油破百</strong>：WTI $101 / Brent $109，中东 + 俄乌双重溢价。传导链：中东→能源→通胀→Fed 不敢降息
+            </div>
+            <div class="highlight">
+                ⚠️ <strong>Ebola 全球紧急事件</strong>：Bundibugyo 毒株，致死率 50%，无疫苗。刚果（金）+ 乌干达，80-88 人死亡
+            </div>
+            <div class="highlight">
+                ⚠️ <strong>乌克兰无人机袭击莫斯科</strong>：500+ 架无人机，3-4 人死亡。俄乌冲突升级，可能进一步推高能源价格
+            </div>
+            <div class="highlight">
+                ⏰ <strong>6 月 12 日 Fed 会议</strong>：倒计时 26 天，市场预期按兵不动
+            </div>
+        </div>
+
+        <div class="footer">
+            🦐 大虾日报 · 2026-05-17<br>
+            <span style="font-size:11px; margin-top:8px; display:block;">
+                数据来源：BBC / NYT / Reuters / Yahoo Finance / Google News<br>
+                生成时间：北京时间 22:13
+            </span>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🦐 大虾日报 - 目录</title>
+    <style>
+        :root {
+            --bg: #0f172a;
+            --card: #1e293b;
+            --border: #334155;
+            --text: #e2e8f0;
+            --muted: #94a3b8;
+            --accent: #38bdf8;
+            --red: #f87171;
+            --green: #4ade80;
+            --yellow: #fbbf24;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            padding: 16px;
+        }
+        .container { max-width: 600px; margin: 0 auto; }
+        .header {
+            text-align: center;
+            padding: 32px 0 24px;
+            border-bottom: 1px solid var(--border);
+            margin-bottom: 24px;
+        }
+        .header h1 { font-size: 32px; margin-bottom: 8px; }
+        .header p { color: var(--muted); font-size: 14px; }
+        .report-list { list-style: none; }
+        .report-item {
+            background: var(--card);
+            border-radius: 12px;
+            padding: 16px 20px;
+            margin-bottom: 12px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-left: 4px solid var(--accent);
+            transition: all 0.2s;
+        }
+        .report-item:hover {
+            transform: translateX(4px);
+            border-left-color: var(--green);
+        }
+        .report-date {
+            font-weight: 600;
+            font-size: 16px;
+        }
+        .report-day {
+            color: var(--muted);
+            font-size: 13px;
+            margin-top: 2px;
+        }
+        .report-link {
+            color: var(--accent);
+            text-decoration: none;
+            font-size: 14px;
+            padding: 6px 16px;
+            border: 1px solid var(--accent);
+            border-radius: 20px;
+            transition: all 0.2s;
+        }
+        .report-link:hover {
+            background: var(--accent);
+            color: var(--bg);
+        }
+        .footer {
+            text-align: center;
+            padding: 24px 0;
+            color: var(--muted);
+            font-size: 13px;
+            border-top: 1px solid var(--border);
+            margin-top: 24px;
+        }
+        @media (max-width: 480px) {
+            .report-item { flex-direction: column; gap: 12px; text-align: center; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🦐 大虾日报</h1>
+            <p>每日全球资讯 · 金融 · 地缘 · 科技</p>
+        </div>
+
+        <ul class="report-list">
+            <li class="report-item">
+                <div>
+                    <div class="report-date">2026-05-18</div>
+                    <div class="report-day">周一 · 美伊升级 + 韩国闪崩 + 金价破$4500</div>
+                </div>
+                <a href="2026-05-18.html" class="report-link">阅读 →</a>
+            </li>
+            <li class="report-item">
+                <div>
+                    <div class="report-date">2026-05-17</div>
+                    <div class="report-day">周日 · 原油破百 + Ebola 紧急 + 乌克兰无人机</div>
+                </div>
+                <a href="2026-05-17.html" class="report-link">阅读 →</a>
+            </li>
+        </ul>
+
+        <div class="footer">
+            🦐 大虾 · 每日 22:00 更新<br>
+            <span style="font-size:11px; margin-top:4px; display:block;">
+                数据来源：BBC / Reuters / Bloomberg / Polymarket / 财经新闻
+            </span>
+        </div>
+    </div>
+</body>
+</html>
