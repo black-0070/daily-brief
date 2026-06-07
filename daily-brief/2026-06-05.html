@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🦐 大虾日报 - 2026-06-05</title>
+    <style>
+        :root {
+            --bg: #0f172a;
+            --card: #1e293b;
+            --border: #334155;
+            --text: #e2e8f0;
+            --muted: #94a3b8;
+            --accent: #38bdf8;
+            --red: #f87171;
+            --green: #4ade80;
+            --yellow: #fbbf24;
+            --orange: #fb923c;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            padding: 16px;
+        }
+        .container { max-width: 800px; margin: 0 auto; }
+        .header {
+            text-align: center;
+            padding: 24px 0 16px;
+            border-bottom: 1px solid var(--border);
+            margin-bottom: 24px;
+        }
+        .header h1 { font-size: 28px; margin-bottom: 4px; }
+        .header .date { color: var(--muted); font-size: 14px; }
+        .section {
+            background: var(--card);
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 16px;
+            border-left: 4px solid var(--accent);
+        }
+        .section.political { border-left-color: var(--red); }
+        .section.tech { border-left-color: var(--green); }
+        .section.market { border-left-color: var(--yellow); }
+        .section.crypto { border-left-color: var(--orange); }
+        .section h2 {
+            font-size: 18px;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .item {
+            padding: 12px 0;
+            border-bottom: 1px solid var(--border);
+        }
+        .item:last-child { border-bottom: none; }
+        .item-title {
+            font-weight: 600;
+            font-size: 15px;
+            margin-bottom: 4px;
+        }
+        .item-desc {
+            color: var(--muted);
+            font-size: 14px;
+            margin-bottom: 6px;
+        }
+        .item a {
+            color: var(--accent);
+            text-decoration: none;
+            font-size: 13px;
+            word-break: break-all;
+        }
+        .item a:hover { text-decoration: underline; }
+        .tag {
+            display: inline-block;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 11px;
+            font-weight: 600;
+            margin-right: 6px;
+        }
+        .tag.hot { background: rgba(248,113,113,0.2); color: var(--red); }
+        .tag.new { background: rgba(74,222,128,0.2); color: var(--green); }
+        .tag.info { background: rgba(56,189,248,0.2); color: var(--accent); }
+        .tag.warn { background: rgba(251,191,36,0.2); color: var(--yellow); }
+        .stock-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+            gap: 8px;
+            margin-top: 12px;
+        }
+        .stock-card {
+            background: rgba(0,0,0,0.2);
+            border-radius: 8px;
+            padding: 12px;
+            text-align: center;
+        }
+        .stock-symbol { font-size: 12px; color: var(--muted); }
+        .stock-price { font-size: 20px; font-weight: 700; margin: 4px 0; }
+        .stock-note { font-size: 11px; color: var(--muted); }
+        .up { color: var(--green); }
+        .down { color: var(--red); }
+        .footer {
+            text-align: center;
+            padding: 24px 0;
+            color: var(--muted);
+            font-size: 13px;
+            border-top: 1px solid var(--border);
+            margin-top: 24px;
+        }
+        .highlight {
+            background: rgba(248,113,113,0.1);
+            border-left: 3px solid var(--red);
+            padding: 8px 12px;
+            border-radius: 0 8px 8px 0;
+            margin: 8px 0;
+            font-size: 14px;
+        }
+        .highlight.warn {
+            background: rgba(251,191,36,0.1);
+            border-left-color: var(--yellow);
+        }
+        @media (max-width: 480px) {
+            body { padding: 12px; }
+            .header h1 { font-size: 22px; }
+            .section { padding: 16px; }
+            .stock-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🦐 大虾日报</h1>
+            <div class="date">2026-06-05 · 周五</div>
+        </div>
+
+        <div class="section market">
+            <h2>📊 市场快照</h2>
+            <div class="stock-grid">
+                <div class="stock-card">
+                    <div class="stock-symbol">S&P 500</div>
+                    <div class="stock-price">7515.66</div>
+                    <div class="stock-note">2个月涨16%</div>
+                </div>
+                <div class="stock-card">
+                    <div class="stock-symbol">道琼斯</div>
+                    <div class="stock-price">51480.96</div>
+                    <div class="stock-note">6/4 创收盘新高</div>
+                </div>
+                <div class="stock-card">
+                    <div class="stock-symbol">纳斯达克</div>
+                    <div class="stock-price">26393.18</div>
+                    <div class="stock-note">科技股分化</div>
+                </div>
+                <div class="stock-card">
+                    <div class="stock-symbol">VIX</div>
+                    <div class="stock-price down">16.74</div>
+                    <div class="stock-note">低风险区间</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>🏦 宏观指标</h2>
+            <div class="stock-grid">
+                <div class="stock-card">
+                    <div class="stock-symbol">WTI 原油</div>
+                    <div class="stock-price down">$90.98</div>
+                    <div class="stock-note">-2.06 回落</div>
+                </div>
+                <div class="stock-card">
+                    <div class="stock-symbol">Brent</div>
+                    <div class="stock-price down">$93.54</div>
+                    <div class="stock-note">-1.49 回落</div>
+                </div>
+                <div class="stock-card">
+                    <div class="stock-symbol">10Y 国债</div>
+                    <div class="stock-price">4.546%</div>
+                    <div class="stock-note">利率中枢</div>
+                </div>
+                <div class="stock-card">
+                    <div class="stock-symbol">2Y 国债</div>
+                    <div class="stock-price">4.28%</div>
+                    <div class="stock-note">短端利率</div>
+                </div>
+                <div class="stock-card">
+                    <div class="stock-symbol">黄金</div>
+                    <div class="stock-price">$4397.2</div>
+                    <div class="stock-note">避险资产</div>
+                </div>
+                <div class="stock-card">
+                    <div class="stock-symbol">BTC</div>
+                    <div class="stock-price down">$60,852</div>
+                    <div class="stock-note">⚠️ 暴跌中</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>📈 持仓表现</h2>
+            <div class="stock-grid">
+                <div class="stock-card">
+                    <div class="stock-symbol">TSLA</div>
+                    <div class="stock-price">$418.45</div>
+                    <div class="stock-note">周涨 +3.11%</div>
+                </div>
+                <div class="stock-card">
+                    <div class="stock-symbol">NVDA</div>
+                    <div class="stock-price up">+1.82%</div>
+                    <div class="stock-note">Computex 后利好</div>
+                </div>
+                <div class="stock-card">
+                    <div class="stock-symbol">AAPL</div>
+                    <div class="stock-price">-</div>
+                    <div class="stock-note">无重大动态</div>
+                </div>
+                <div class="stock-card">
+                    <div class="stock-symbol">MSFT</div>
+                    <div class="stock-price">-</div>
+                    <div class="stock-note">无重大动态</div>
+                </div>
+                <div class="stock-card">
+                    <div class="stock-symbol">RKLB</div>
+                    <div class="stock-price down">-13%</div>
+                    <div class="stock-note">航天板块分化</div>
+                </div>
+                <div class="stock-card">
+                    <div class="stock-symbol">PL</div>
+                    <div class="stock-price">-</div>
+                    <div class="stock-note">政府合同增长</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section political">
+            <h2>🌍 国际政治</h2>
+            <div class="item">
+                <div class="item-title">
+                    <span class="tag hot">热点</span>
+                    美伊战争持续升级
+                </div>
+                <div class="item-desc">
+                    • 4/8 停火协议破裂，6 月初新一轮升级<br>
+                    • CENTCOM: 6,000+ 目标被打击，90+ 伊朗船只被摧毁/损坏<br>
+                    • 伊朗向科威特和巴林发射导弹，失败或被拦截<br>
+                    • 美众议院 215-208 通过法案，要求战争行动需国会授权<br>
+                    • Polymarket: 6/7 前和平协议概率仅 3%
+                </div>
+                <a href="https://apnews.com/article/iran-us-israel-war-2-june-2026-9bde9a3425d4b9ff70f157bdae0fb982">AP: 伊朗战争更新 →</a><br>
+                <a href="https://www.aljazeera.com/news/liveblog/2026/6/4/iran-war-live-tensions-simmer-after-latest-us-iran-clashes-in-gulf">Al Jazeera: 波斯湾冲突直播 →</a>
+            </div>
+            <div class="item">
+                <div class="item-title">
+                    <span class="tag info">关注</span>
+                    Xi 访朝 + 俄乌新动向
+                </div>
+                <div class="item-desc">
+                    • Xi Jinping 确认 6/8-9 访问朝鲜<br>
+                    • Zelenskyy 提议与 Putin 面对面谈判<br>
+                    • 众议院共和党再次违背 Trump，通过乌克兰援助法案
+                </div>
+                <a href="https://www.scmp.com/news/china/diplomacy/article/xi-jinping-north-korea-visit-june-2026">SCMP: Xi 访朝 →</a>
+            </div>
+            <div class="item">
+                <div class="item-title">
+                    <span class="tag info">关注</span>
+                    以色列-黎巴嫩
+                </div>
+                <div class="item-desc">
+                    • 以色列继续黎巴嫩打击，真主党拒绝停火<br>
+                    • Polymarket: 6/7 前黎巴嫩停火概率 0%
+                </div>
+            </div>
+        </div>
+
+        <div class="section tech">
+            <h2>🤖 科技/AI</h2>
+            <div class="item">
+                <div class="item-title">
+                    <span class="tag hot">热点</span>
+                    SpaceX IPO 定价 $135
+                </div>
+                <div class="item-desc">JPMorgan Jamie Dimon 为 Musk 举办 SpaceX IPO 豪华活动，定价 $135/股不调整</div>
+                <a href="https://www.reuters.com/technology/space/spacex-ipo-pricing-2026-06-05/">Reuters: SpaceX IPO →</a>
+            </div>
+            <div class="item">
+                <div class="item-title">
+                    <span class="tag new">AI</span>
+                    Anthropic 呼吁全球暂停 AI 开发
+                </div>
+                <div class="item-desc">警告 AI 可能失控，呼吁全球暂停以防止人类失控</div>
+                <a href="https://siliconangle.com/2026/06/05/anthropic-calls-global-ai-pause/">SiliconANGLE: AI 暂停呼吁 →</a>
+            </div>
+            <div class="item">
+                <div class="item-title">
+                    <span class="tag info">科技</span>
+                    Google 裁减云部门转向 AI
+                </div>
+                <div class="item-desc">悄悄裁减云部门员工，资源转向 AI 投资</div>
+            </div>
+            <div class="item">
+                <div class="item-title">
+                    <span class="tag new">新品</span>
+                    Valve Steam Machine 今夏发布
+                </div>
+                <div class="item-desc">NVIDIA RTX Spark PCs 重新定义 Windows PC</div>
+            </div>
+        </div>
+
+        <div class="section crypto">
+            <h2>💰 加密货币</h2>
+            <div class="item">
+                <div class="item-title">
+                    <span class="tag hot">暴跌</span>
+                    BTC/ETH/XRP/SOL 全线两位数下跌
+                </div>
+                <div class="item-desc">
+                    • BTC: $60,852（日内下跌）<br>
+                    • 原因：Strategy (MicroStrategy) 卖出 BTC + ETF 资金流出创纪录 + 伊朗紧张<br>
+                    • Polymarket: BTC 今日高于 $68K 概率 0%
+                </div>
+                <a href="https://247wallst.com/investing/2026/06/04/crypto-crash-today-why-bitcoin-ethereum-xrp-and-solana-are-all-down-double-digits/">24/7 Wall St: 加密货币暴跌分析 →</a>
+            </div>
+        </div>
+
+        <div class="section market">
+            <h2>🏦 美联储观察</h2>
+            <div class="stock-grid">
+                <div class="stock-card">
+                    <div class="stock-symbol">维持不变</div>
+                    <div class="stock-price up">99%</div>
+                    <div class="stock-note">Polymarket</div>
+                </div>
+                <div class="stock-card">
+                    <div class="stock-symbol">降息 25bp</div>
+                    <div class="stock-price">1%</div>
+                    <div class="stock-note">几乎不可能</div>
+                </div>
+                <div class="stock-card">
+                    <div class="stock-symbol">下次会议</div>
+                    <div class="stock-price">6/12</div>
+                    <div class="stock-note">倒计时 7 天</div>
+                </div>
+                <div class="stock-card">
+                    <div class="stock-symbol">当前利率</div>
+                    <div class="stock-price">3.50-3.75%</div>
+                    <div class="stock-note">鹰派暂停</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section market">
+            <h2>🔑 关键提醒</h2>
+            <div class="highlight">
+                ⚠️ <strong>加密货币暴跌</strong>：BTC $60,852，ETH/XRP/SOL 全线两位数下跌。Strategy 卖币 + ETF 流出 + 伊朗紧张三重打击
+            </div>
+            <div class="highlight warn">
+                ⚠️ <strong>Shiller P/E 达 43</strong>：S&P 500 两个月涨 16%，估值类似 1987 年崩盘前水平。注意风险
+            </div>
+            <div class="highlight">
+                ⏰ <strong>6 月 12 日 FOMC</strong>：倒计时 7 天，市场 99% 预期按兵不动。关注点阵图和经济预测
+            </div>
+            <div class="highlight warn">
+                🛢️ <strong>原油回落</strong>：WTI $90.98 / Brent $93.54，较之前破百回落。但地缘风险仍在，随时可能反弹
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>🎲 Polymarket 情报</h2>
+            <div class="item">
+                <div class="item-title">美伊和平协议 (6/7)</div>
+                <div class="item-desc">Yes 3% / No 97% — 市场几乎完全排除短期和平可能</div>
+            </div>
+            <div class="item">
+                <div class="item-title">伊朗政权倒台 (6/30)</div>
+                <div class="item-desc">Yes 2% / No 98% — 市场不认为战争会导致政权更迭</div>
+            </div>
+            <div class="item">
+                <div class="item-title">以色列-黎巴嫩停火 (6/7)</div>
+                <div class="item-desc">Yes 0% — 已过期，真主党拒绝停火</div>
+            </div>
+            <div class="item">
+                <div class="item-title">Hunter Biden 2028 民主党提名</div>
+                <div class="item-desc">Yes 2% — 几乎不可能</div>
+            </div>
+        </div>
+
+        <div class="footer">
+            🦐 大虾日报 · 2026-06-05<br>
+            <span style="font-size:11px; margin-top:8px; display:block;">
+                数据来源：Reuters / AP / Al Jazeera / CNBC / Polymarket / Yahoo Finance<br>
+                生成时间：北京时间 22:15
+            </span>
+        </div>
+    </div>
+</body>
+</html>
