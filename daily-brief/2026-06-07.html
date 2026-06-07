@@ -45,7 +45,7 @@
         .section.tech { border-left-color: var(--green); }
         .section.market { border-left-color: var(--yellow); }
         .section.crypto { border-left-color: var(--orange); }
-        .section.polymarket { border-left-color: #a78bfa; }
+        .section.prediction { border-left-color: #a78bfa; }
         .section h2 {
             font-size: 18px;
             margin-bottom: 12px;
@@ -101,7 +101,6 @@
         }
         .stock-symbol { font-size: 12px; color: var(--muted); }
         .stock-price { font-size: 20px; font-weight: 700; margin: 4px 0; }
-        .stock-change { font-size: 12px; margin: 2px 0; }
         .stock-note { font-size: 11px; color: var(--muted); }
         .up { color: var(--green); }
         .down { color: var(--red); }
@@ -121,44 +120,28 @@
             margin: 8px 0;
             font-size: 14px;
         }
-        .highlight.info {
-            background: rgba(56,189,248,0.1);
-            border-left-color: var(--accent);
+        .highlight-green {
+            background: rgba(74,222,128,0.1);
+            border-left: 3px solid var(--green);
+            padding: 8px 12px;
+            border-radius: 0 8px 8px 0;
+            margin: 8px 0;
+            font-size: 14px;
         }
-        .highlight.warn {
-            background: rgba(251,191,36,0.1);
-            border-left-color: var(--yellow);
-        }
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            font-size: 13px;
-            margin-top: 8px;
-        }
-        th, td {
-            padding: 6px 10px;
-            text-align: left;
-            border-bottom: 1px solid var(--border);
-        }
-        th { color: var(--muted); font-weight: 500; font-size: 11px; text-transform: uppercase; }
-        td { font-size: 13px; }
         .prob-bar {
-            display: inline-block;
             height: 6px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 3px;
+            margin-top: 4px;
+            overflow: hidden;
+        }
+        .prob-fill {
+            height: 100%;
             border-radius: 3px;
             background: var(--accent);
-            vertical-align: middle;
-            margin-right: 6px;
         }
-        .prob-bar-bg {
-            display: inline-block;
-            width: 60px;
-            height: 6px;
-            border-radius: 3px;
-            background: var(--border);
-            vertical-align: middle;
-            margin-right: 4px;
-        }
+        .prob-fill.high { background: var(--green); }
+        .prob-fill.low { background: var(--red); }
         @media (max-width: 480px) {
             body { padding: 12px; }
             .header h1 { font-size: 22px; }
@@ -174,65 +157,49 @@
             <div class="date">2026-06-07 · 周日 · 纯数据版（今日无推文）</div>
         </div>
 
-        <!-- 执行摘要 -->
-        <div class="section">
-            <h2>📋 执行摘要</h2>
-            <div class="highlight warn">
-                ⚠️ <strong>原油一周暴跌 10%+</strong>：WTI 从 $101 跌至 $90.54，地缘溢价消退 + 需求担忧
-            </div>
-            <div class="highlight info">
-                🏦 <strong>Fed 6/12 会议倒计时 5 天</strong>：Polymarket 99% 概率维持利率不变，降息预期归零
-            </div>
-            <div class="highlight info">
-                ₿ <strong>BTC 持续承压</strong>：$61,480，Polymarket 92% 概率今日下跌，$64K 都站不上
-            </div>
-        </div>
-
-        <!-- 宏观指标 -->
         <div class="section market">
-            <h2>🏦 宏观指标</h2>
+            <h2>📊 市场快照</h2>
             <div class="stock-grid">
                 <div class="stock-card">
-                    <div class="stock-symbol">WTI 原油</div>
-                    <div class="stock-price down">$90.54</div>
-                    <div class="stock-change down">-2.50</div>
-                    <div class="stock-note">跌破$100警戒线</div>
-                </div>
-                <div class="stock-card">
-                    <div class="stock-symbol">Brent 原油</div>
-                    <div class="stock-price down">$93.09</div>
-                    <div class="stock-change down">-1.94</div>
-                    <div class="stock-note">同步下行</div>
-                </div>
-                <div class="stock-card">
                     <div class="stock-symbol">S&P 500</div>
-                    <div class="stock-price">7,383.74</div>
+                    <div class="stock-price">7383.74</div>
                     <div class="stock-note">高位盘整</div>
                 </div>
                 <div class="stock-card">
                     <div class="stock-symbol">道琼斯</div>
-                    <div class="stock-price">50,866.78</div>
-                    <div class="stock-note">5万点上方</div>
+                    <div class="stock-price">50866.78</div>
+                    <div class="stock-note">5万关口</div>
                 </div>
                 <div class="stock-card">
                     <div class="stock-symbol">纳斯达克</div>
-                    <div class="stock-price">25,709.43</div>
-                    <div class="stock-note">科技股强势</div>
+                    <div class="stock-price">25709.43</div>
+                    <div class="stock-note">科技股支撑</div>
                 </div>
                 <div class="stock-card">
                     <div class="stock-symbol">VIX</div>
                     <div class="stock-price">21.51</div>
                     <div class="stock-note">中风险区间</div>
                 </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>🏦 宏观指标</h2>
+            <div class="stock-grid">
+                <div class="stock-card">
+                    <div class="stock-symbol">WTI 原油</div>
+                    <div class="stock-price down">$90.54</div>
+                    <div class="stock-note">📉 -$2.50 跌破$100</div>
+                </div>
+                <div class="stock-card">
+                    <div class="stock-symbol">Brent</div>
+                    <div class="stock-price down">$93.09</div>
+                    <div class="stock-note">📉 -$1.94</div>
+                </div>
                 <div class="stock-card">
                     <div class="stock-symbol">10Y 国债</div>
                     <div class="stock-price">4.536%</div>
                     <div class="stock-note">利率中枢</div>
-                </div>
-                <div class="stock-card">
-                    <div class="stock-symbol">5Y 国债</div>
-                    <div class="stock-price">4.999%</div>
-                    <div class="stock-note">接近5%</div>
                 </div>
                 <div class="stock-card">
                     <div class="stock-symbol">2Y 国债</div>
@@ -241,134 +208,78 @@
                 </div>
                 <div class="stock-card">
                     <div class="stock-symbol">黄金</div>
-                    <div class="stock-price">$4,365.3</div>
-                    <div class="stock-note">避险需求</div>
+                    <div class="stock-price">$4365.3</div>
+                    <div class="stock-note">避险资产</div>
                 </div>
                 <div class="stock-card">
                     <div class="stock-symbol">BTC</div>
-                    <div class="stock-price down">$61,480</div>
-                    <div class="stock-note">持续承压</div>
-                </div>
-                <div class="stock-card">
-                    <div class="stock-symbol">DXY</div>
-                    <div class="stock-price">N/A</div>
-                    <div class="stock-note">采集异常</div>
+                    <div class="stock-price down">$61,481</div>
+                    <div class="stock-note">📉 弱势</div>
                 </div>
             </div>
         </div>
 
-        <!-- 原油专题 -->
-        <div class="section market">
-            <h2>🛢️ 原油专题：一周暴跌 10%+</h2>
-            <div class="item">
-                <div class="item-title">
-                    <span class="tag warn">关注</span>
-                    WTI 从 $101 → $90.54，发生了什么？
-                </div>
-                <div class="item-desc">
-                    • 上周还在 $101 高位，本周暴跌至 $90，跌幅超 10%<br>
-                    • 可能原因：中东停火进展（Israel-Lebanon 停火延期确认）、OPEC+ 增产预期、全球经济放缓担忧<br>
-                    • Brent 同步跌至 $93.09，地缘溢价快速消退<br>
-                    • 传导影响：油价下跌 → 通胀压力缓解 → Fed 降息空间打开（但 6 月已来不及）
-                </div>
-            </div>
-            <div class="highlight info">
-                💡 <strong>对持仓影响</strong>：油价下跌利好航空/运输，利空能源股。TSLA 间接受益（消费者加油成本降低）。RKLB/PL 航天股不受直接影响。
-            </div>
-        </div>
-
-        <!-- Polymarket -->
-        <div class="section polymarket">
-            <h2>🦞 Polymarket 预测市场</h2>
-            
+        <div class="section prediction">
+            <h2>🎲 Polymarket 预测市场</h2>
             <div class="item">
                 <div class="item-title">
                     <span class="tag hot">Fed 6/12</span>
-                    美联储 6 月利率决议（倒计时 5 天）
+                    美联储 6 月会议：99% 维持利率不变
                 </div>
-                <table>
-                    <tr><td>维持利率不变</td><td><span class="prob-bar-bg"><span class="prob-bar" style="width:59px"></span></span> <strong style="color:#4ade80">99%</strong></td></tr>
-                    <tr><td>降息 25bp</td><td><span class="prob-bar-bg"><span class="prob-bar" style="width:0px"></span></span> 0%</td></tr>
-                    <tr><td>降息 50+bp</td><td><span class="prob-bar-bg"><span class="prob-bar" style="width:0px"></span></span> 0%</td></tr>
-                    <tr><td>加息 25bp</td><td><span class="prob-bar-bg"><span class="prob-bar" style="width:0px"></span></span> 0%</td></tr>
-                </table>
-                <div class="item-desc" style="margin-top:8px;">市场压倒性预期按兵不动。关注点不在利率本身，而在 Powell 新闻发布会措辞和点阵图。</div>
+                <div class="item-desc">
+                    降息 25bp: 0% | 降息 50bp: 0% | 不变: 99% | 加息 25bp: 0% | 加息 50bp: 0%
+                </div>
+                <div class="prob-bar"><div class="prob-fill high" style="width:99%"></div></div>
             </div>
-
             <div class="item">
                 <div class="item-title">
                     <span class="tag hot">BTC</span>
-                    比特币短期预测
+                    比特币今日走势：92% 下跌
                 </div>
-                <table>
-                    <tr><td>今日下跌</td><td><span class="prob-bar-bg"><span class="prob-bar" style="width:55px"></span></span> <strong style="color:#f87171">92%</strong></td></tr>
-                    <tr><td>BTC > $64K (6/7)</td><td><span class="prob-bar-bg"><span class="prob-bar" style="width:1px"></span></span> 1%</td></tr>
-                    <tr><td>BTC > $66K (6/7)</td><td><span class="prob-bar-bg"><span class="prob-bar" style="width:0px"></span></span> 0%</td></tr>
-                    <tr><td>BTC > $68K (6/7)</td><td><span class="prob-bar-bg"><span class="prob-bar" style="width:0px"></span></span> 0%</td></tr>
-                </table>
-                <div class="item-desc" style="margin-top:8px;">当前 $61,480，市场极度看空短期。Microstrategy 本周宣布购买 BTC 概率 94%（待验证）。</div>
+                <div class="item-desc">
+                    BTC>$68K: 0% | BTC>$66K: 0% | BTC>$64K: 1% | 当前 $61,480
+                </div>
+                <div class="prob-bar"><div class="prob-fill low" style="width:92%"></div></div>
             </div>
-
             <div class="item">
                 <div class="item-title">
-                    <span class="tag info">地缘</span>
+                    <span class="tag info">中东</span>
                     US-Iran 和平协议概率
                 </div>
-                <table>
-                    <tr><td>6/7 前（今天到期）</td><td><span class="prob-bar-bg"><span class="prob-bar" style="width:1px"></span></span> 1%</td></tr>
-                    <tr><td>6/15 前</td><td><span class="prob-bar-bg"><span class="prob-bar" style="width:4px"></span></span> 6%</td></tr>
-                    <tr><td>6/30 前</td><td><span class="prob-bar-bg"><span class="prob-bar" style="width:10px"></span></span> 17%</td></tr>
-                    <tr><td>7/31 前</td><td><span class="prob-bar-bg"><span class="prob-bar" style="width:18px"></span></span> <strong>30%</strong></td></tr>
-                </table>
-                <div class="item-desc" style="margin-top:8px;">短期无望，但 7 月底有 30% 概率。伊朗政权更迭概率仅 2%，市场不看好。</div>
+                <div class="item-desc">
+                    6/7 到期: 1%（今日） | 6/15: 6% | 6/30: 17% | 7/31: 30%<br>
+                    Iran 政权更迭 (6/30): 2% | 关闭领空 (6/30): 19%
+                </div>
             </div>
-
             <div class="item">
                 <div class="item-title">
-                    <span class="tag new">确认</span>
-                    Israel-Lebanon 停火延期
+                    <span class="tag new">已结算</span>
+                    Israel-Lebanon 停火延期 (6/7)
                 </div>
-                <div class="item-desc">
-                    Polymarket 已结算为 YES（$1.00），停火延期正式确认。这是原油下跌的重要催化剂之一。
+                <div class="item-desc">$1.00 确认 — 停火延期已达成</div>
+            </div>
+            <div class="item">
+                <div class="item-title">
+                    <span class="tag info">MicroStrategy</span>
+                    6/2-8 宣布购买 BTC：94%
                 </div>
+                <div class="item-desc">市场高度预期 Saylor 本周继续加仓比特币</div>
             </div>
         </div>
 
-        <!-- 本周前瞻 -->
-        <div class="section">
-            <h2>📅 下周前瞻（6/8 - 6/14）</h2>
-            <div class="item">
-                <div class="item-title">
-                    <span class="tag hot">⭐ 6/12 周五</span>
-                    FOMC 利率决议 + 经济预测 + Powell 新闻发布会
-                </div>
-                <div class="item-desc">
-                    本周最重要事件。虽然 99% 概率不变，但点阵图和经济预测将影响下半年预期。<br>
-                    <strong>关注：</strong>点阵图中位数是否从 3 次降息下调、Powell 对通胀/就业的措辞。
-                </div>
-            </div>
-            <div class="item">
-                <div class="item-title">
-                    <span class="tag info">6/11 周四</span>
-                    初请失业金人数 + CPI 前哨
-                </div>
-                <div class="item-desc">
-                    Fed 会议前一天的数据，可能影响市场情绪。
-                </div>
-            </div>
-        </div>
-
-        <!-- 关键提醒 -->
         <div class="section market">
             <h2>🔑 关键提醒</h2>
-            <div class="highlight warn">
-                ⚠️ <strong>原油下行趋势确认</strong>：WTI $90.54，已跌破 $100 警戒线。若继续跌破 $80，将触发通胀预期大幅下调 → Fed 降息预期升温 → 利好股市/crypto
-            </div>
-            <div class="highlight info">
-                ⏰ <strong>Fed 会议倒计时 5 天</strong>：6/12 FOMC，本周最重要事件。虽然利率不变是板上钉钉，但点阵图是最大变量。
+            <div class="highlight">
+                ⚠️ <strong>原油跌破 $100</strong>：WTI $90.54，一周内从 $101 跌至 $90，跌幅 10%+。利好通胀降温，但需关注是否跌破 $80 警戒线
             </div>
             <div class="highlight">
-                📉 <strong>BTC 短期偏空</strong>：$61K 关口岌岌可危，Polymarket 92% 看跌。关注 $60K 心理支撑。
+                ⏰ <strong>6 月 12 日 Fed 会议</strong>：倒计时 5 天！Polymarket 99% 概率维持利率不变，市场已充分定价
+            </div>
+            <div class="highlight-green">
+                ✅ <strong>Israel-Lebanon 停火延期确认</strong>：中东紧张局势局部缓解
+            </div>
+            <div class="highlight">
+                📉 <strong>BTC 弱势</strong>：$61,480，Polymarket 92% 看跌今日。MicroStrategy 若宣布加仓或成短期催化剂
             </div>
         </div>
 
@@ -376,9 +287,7 @@
             🦐 大虾日报 · 2026-06-07<br>
             <span style="font-size:11px; margin-top:8px; display:block;">
                 数据来源：Yahoo Finance / Polymarket / CME FedWatch<br>
-                采集时间：北京时间 09:23<br>
-                ⚠️ 今日无推文内容（Chrome 扩展未激活）<br>
-                生成时间：北京时间 22:00
+                生成时间：北京时间 22:27 · 今日无推文内容（Chrome 扩展未激活）
             </span>
         </div>
     </div>
